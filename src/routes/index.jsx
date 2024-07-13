@@ -1,11 +1,11 @@
 //import useContext
-import React, { useContext } from "react";
+import { useContext } from "react";
 
 import { AuthContext } from "../context/AuthContext";
 
 import { Routes, Route, Navigate } from "react-router-dom";
 
-import Home from "../views/home/index.jsx";
+import Home from "../views/index.jsx";
 
 import Register from "../views/auth/register.jsx";
 

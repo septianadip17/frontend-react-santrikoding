@@ -1,5 +1,5 @@
 //import React dan hooks createContext, useState, dan useEffect dari 'react'
-import React, { createContext, useState, useEffect } from "react";
+import { createContext, useState, useEffect } from "react";
 
 //import Cookies dari 'js-cookie' untuk mengelola cookies
 import Cookies from "js-cookie";
