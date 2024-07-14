@@ -1,6 +1,7 @@
 //import React dan hooks createContext, useState, dan useEffect dari 'react'
 import { createContext, useState, useEffect } from "react";
-
+//import PropTypes untuk validasi props
+import PropTypes from "prop-types";
 //import Cookies dari 'js-cookie' untuk mengelola cookies
 import Cookies from "js-cookie";
 
@@ -35,4 +36,9 @@ export const AuthProvider = ({ children }) => {
       {children}
     </AuthContext.Provider>
   );
+};
+
+// Menambahkan propTypes untuk AuthProvider
+AuthProvider.propTypes = {
+  children: PropTypes.node.isRequired,
 };
