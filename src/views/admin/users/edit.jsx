@@ -1,5 +1,4 @@
-//import useState dan useEffect
-import { useState, useEffect } from "react";
+import { useState, useEffect, useCallback } from "react";
 
 //import SidebarMenu
 import SidebarMenu from "../../../components/SidebarMenu";
@@ -32,20 +31,20 @@ export default function UsersEdit() {
   const [validation, setValidation] = useState([]);
 
   //method fetchDetailUser
-  const fetchDetailUser = async () => {
+  const fetchDetailUser = useCallback(async () => {
     //fetch data
     await api.get(`/api/admin/users/${id}`).then((response) => {
       //assign to state
       setName(response.data.data.name);
       setEmail(response.data.data.email);
     });
-  };
+  }, [id]);
 
   //hook useEffect
   useEffect(() => {
     //call method "fetchDetailUser"
     fetchDetailUser();
-  }, []);
+  }, [fetchDetailUser]);
 
   //method "updateUser"
   const updateUser = async (e) => {
